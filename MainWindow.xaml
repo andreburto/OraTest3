@@ -11,8 +11,9 @@
         <Grid Background="Black" Height="40">
            <Grid.ColumnDefinitions>
                <ColumnDefinition Width="*"></ColumnDefinition>
-                <ColumnDefinition Width="150"></ColumnDefinition>
-                <ColumnDefinition Width="150"></ColumnDefinition>
+                <ColumnDefinition Width="130"></ColumnDefinition>
+                <ColumnDefinition Width="130"></ColumnDefinition>
+                <ColumnDefinition Width="130"></ColumnDefinition>
             </Grid.ColumnDefinitions>
            <Grid.RowDefinitions>
                <RowDefinition Height="1*"></RowDefinition>
@@ -20,6 +21,7 @@
            <TextBox Grid.Column="0" Grid.Row="0" Name="txtSearch" HorizontalAlignment="Stretch" VerticalAlignment="Center" Padding="0" Height="35" Margin="5,1" ToolTip="Enter one search term here" VerticalContentAlignment="Center" FontSize="14" />
             <Button Grid.Column="1" Grid.Row="0" Content="SEARCH TERM" ToolTip="Click here to search by keyword" Height="35" Name="btnSearch" FontSize="16" FontWeight="Bold" VerticalAlignment="Center" Padding="0" HorizontalAlignment="Stretch" Margin="5,1" Click="btnSearch_Click" />
             <Button Grid.Column="2" Grid.Row="0" Content="TABLE NAME" ToolTip="Click here to get a table" Height="35" Name="btnFetch" FontSize="16" FontWeight="Bold" VerticalAlignment="Center" Padding="0" HorizontalAlignment="Stretch" Margin="5,1" Click="btnFetch_Click" />
+            <Button Grid.Column="3" Grid.Row="0" Content="COLUMN" ToolTip="Click here to get columns by name" Height="35" Name="btnColumn" FontSize="16" FontWeight="Bold" VerticalAlignment="Center" Padding="0" HorizontalAlignment="Stretch" Margin="5,1" Click="btnColumn_Click" />
         </Grid>
         <DataGrid AutoGenerateColumns="True" Height="320" Name="dgTables" Margin="5,5,5,0" ToolTip="Lists the tables that fit search" MinHeight="320" SelectionChanged="dgTables_SelectionChanged" />
         <DataGrid AutoGenerateColumns="True" Height="320" Name="dgColumns" Margin="5" ToolTip="Lists columns from the selected table" MinHeight="320" VerticalContentAlignment="Bottom" />

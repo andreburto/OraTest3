@@ -45,6 +45,11 @@ namespace OraTest3
             return FetchDataSet("SELECT a.COLUMN_NAME, a.DATA_TYPE, b.COMMENTS, a.TABLE_NAME, a.DATA_LENGTH, a.NULLABLE, a.DATA_DEFAULT, a.CHAR_LENGTH FROM ALL_TAB_COLUMNS a, ALL_COL_COMMENTS b WHERE a.TABLE_NAME = b.TABLE_NAME and a.COLUMN_NAME = b.COLUMN_NAME and a.TABLE_NAME = UPPER('" + tblName + "')");
         }
 
+        public static DataSet LoadColNamData(string colName)
+        {
+            return FetchDataSet("SELECT TABLE_NAME, TABLE_TYPE, COMMENTS, OWNER FROM ALL_TAB_COMMENTS WHERE TABLE_NAME IN (SELECT DISTINCT TABLE_NAME FROM ALL_TAB_COLUMNS WHERE upper(COLUMN_NAME) LIKE UPPER('%"+colName+"%')) AND TABLE_TYPE = 'TABLE' ORDER BY TABLE_NAME");
+        }
+
         public static DataSet FetchDataSet(string queryA)
         {
             DataSet ds = new DataSet();

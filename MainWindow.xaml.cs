@@ -130,5 +130,14 @@ namespace OraTest3
             sp.ShowInTaskbar = false;
             sp.ShowDialog();
         }
+
+        private void btnColumn_Click(object sender, RoutedEventArgs e)
+        {
+            if (txtSearch.Text.Length == 0) { return; }
+            DataSet ds = DbStuff.LoadColNamData(txtSearch.Text);
+            if (ds.Tables.Count == 0) { return; }
+            if (ds.Tables[0].Rows.Count == 0) { return; }
+            dgTables.ItemsSource = new DataView(ds.Tables[0]);
+        }
     }
 }
